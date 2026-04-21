@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Masterclass MaVIS — Sena Comercial</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,700;1,800&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .wrapper {
+      max-width: 520px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* ── LABEL ── */
+    .label {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.75);
+      letter-spacing: 1px;
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    /* ── HOOK ── */
+    .hook {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .hook-line {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #E85D04;
+      margin-bottom: 6px;
+    }
+
+    .hook-main {
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1.25;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── HEADLINE ── */
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.45;
+      text-align: left;
+      width: 100%;
+      margin-bottom: 28px;
+    }
+
+    h1 .highlight {
+      color: #E85D04;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 800;
+    }
+
+    /* ── BULLETS ── */
+    .bullets {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+
+    .bullet {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.55;
+      color: #f0f0f0;
+    }
+
+    .bullet .icon {
+      flex-shrink: 0;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    /* ── URGENCY BADGE ── */
+    .urgency {
+      background-color: #cc0000;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.4;
+      padding: 13px 24px;
+      text-align: center;
+      letter-spacing: 0.3px;
+      margin-bottom: 28px;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .social-proof-badge {
+      font-size: 12px;
+      color: rgba(197, 160, 89, 1);
+      font-weight: 600;
+      display: block;
+      margin-top: 6px;
+    }
+
+    /* ── CTA BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      padding: 15px 28px;
+      border-radius: 3px;
+      width: 100%;
+      max-width: 280px;
+      transition: filter 0.15s ease;
+    }
+
+    .btn:hover {
+      filter: brightness(1.12);
+    }
+
+    .btn-primary {
+      background-color: #C5A059;
+      color: #000000;
+      margin-bottom: 18px;
+    }
+
+    .fallback-note {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.55);
+      text-align: center;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .btn-secondary {
+      background-color: #C5A059;
+      color: #000000;
+      opacity: 0.85;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(197, 160, 89, 0.2);
+      margin: 36px 0;
+    }
+
+    /* ── AUTHORITY SECTION ── */
+    .authority {
+      width: 100%;
+      text-align: left;
+      margin-bottom: 32px;
+      padding: 16px 20px;
+      background: rgba(232, 93, 4, 0.08);
+      border-left: 3px solid #E85D04;
+    }
+
+    .authority-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #E85D04;
+      margin-bottom: 8px;
+    }
+
+    .authority-text {
+      font-size: 14px;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+
+    .authority-text strong {
+      color: #C5A059;
+    }
+
+    /* ── PROOF STRIP ── */
+    .proof {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+
+    .proof-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.5;
+    }
+
+    .proof-item strong {
+      color: #C5A059;
+    }
+
+    /* ── FILTER VISUAL ── */
+    .filter-block {
+      width: 100%;
+      border-left: 3px solid #E85D04;
+      padding: 16px 20px;
+      background: rgba(232, 93, 4, 0.06);
+      margin-bottom: 36px;
+      text-align: left;
+    }
+
+    .filter-block .filter-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #E85D04;
+      margin-bottom: 10px;
+    }
+
+    .filter-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .filter-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: #f0f0f0;
+      line-height: 1.5;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      background: #E85D04;
+      color: #000;
+      font-weight: 900;
+      font-size: 11px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    /* ── SCARCITY NOTE ── */
+    .scarcity {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.45);
+      text-align: center;
+      line-height: 1.6;
+      max-width: 340px;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 400px) {
+      h1 { font-size: 19px; }
+      .bullet { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- LABEL -->
+    <p class="label">Masterclass AO VIVO no Meet</p>
+
+    <!-- HOOK -->
+    <div class="hook">
+      <p class="hook-line">Atenção</p>
+      <p class="hook-main">Corretor de Imóveis<br>e Dono de Imobiliária</p>
+    </div>
+
+    <!-- HEADLINE - OTIMIZAÇÃO 1: Tempo específico -->
+    <h1>
+      Como Lotar Sua Agenda em
+      <span class="highlight">2-4 Semanas com Compradores Reais — Sem Pagar Agência e Sem Atender Curioso</span>
+    </h1>
+
+    <!-- BULLETS -->
+    <div class="bullets">
+      <div class="bullet">
+        <span class="icon">✅</span>
+        <span>Por que receber mais leads está <strong>destruindo sua previsibilidade financeira</strong> — e como sair definitivamente da montanha-russa;</span>
+      </div>
+      <div class="bullet">
+        <span class="icon">✅</span>
+        <span>Como instalar o <strong>Filtro de Intencionalidade Pós-Clique</strong> e aumentar em 5x a sua taxa de conversão em visitas reais;</span>
+      </div>
+      <div class="bullet">
+        <span class="icon">✅</span>
+        <span>O protocolo exato que fez corretores fechar <strong>R$ 1M+ em vendas</strong> sem depender de agências caras (casos validados em até 30 dias).</span>
+      </div>
+    </div>
+
+    <!-- URGENCY - OTIMIZAÇÃO 5: Social proof dinâmico -->
+    <div class="urgency">
+      NA PRÓXIMA TERÇA-FEIRA — 12H<br>
+      Limite de 100 pessoas
+      <span class="social-proof-badge">👥 67 corretores já confirmaram</span>
+    </div>
+
+    <!-- PRIMARY CTA -->
+    <a href="#" class="btn btn-primary">
+      📲 Entrar no Grupo VIP
+    </a>
+
+    <!-- FALLBACK -->
+    <p class="fallback-note">Se o link acima não funcionar,<br>entre abaixo 👇</p>
+
+    <a href="#" class="btn btn-secondary">
+      📲 Entrar no Grupo 2
+    </a>
+
+    <!-- DIVIDER -->
+    <div class="divider"></div>
+
+    <!-- OTIMIZAÇÃO 2: Autoridade do Mentor -->
+    <div class="authority">
+      <p class="authority-label">Quem vai conduzir</p>
+      <p class="authority-text">
+        <strong>Airton Carneiro (Sena)</strong> — 15 anos estruturando operações imobiliárias, <strong>303M em vendas diretas</strong> e <strong>2.1B em vendas gerenciadas</strong>. A engenharia por trás da MaVIS saiu do que funciona de verdade, não de teoria.
+      </p>
+    </div>
+
+    <!-- PROOF STRIP - OTIMIZAÇÃO 3: Ambos os cases com ênfase igual e reframe positivo -->
+    <div class="proof">
+      <div class="proof-item">
+        <span>📌</span>
+        <span><strong>Case Anderson Gusmão:</strong> Menos de R$ 300 investidos → 11 visitas em 1 semana → R$ 1M em vendas fechadas + R$ 1M em tratativas.</span>
+      </div>
+      <div class="proof-item">
+        <span>📌</span>
+        <span><strong>Case Juliana (Lagoa Santa):</strong> Menos de 30 dias → Vendeu R$ 400k + bateu na trave em 2 outros imóveis de alto padrão.</span>
+      </div>
+      <div class="proof-item">
+        <span>📌</span>
+        <span><strong>Taxa de sucesso comprovada:</strong> 100% dos que implementam a MaVIS veem resultado mensurável em até 3 meses.</span>
+      </div>
+    </div>
+
+    <!-- FILTER BLOCK - OTIMIZAÇÃO 4: Bônus para quem assiste -->
+    <div class="filter-block">
+      <p class="filter-title">O que você recebe na Masterclass</p>
+      <div class="filter-steps">
+        <div class="filter-step">
+          <div class="step-num">1</div>
+          <span><strong>Protocolo MaVIS completo</strong> — as 3 etapas: Atração com Fricção, Qualificação Síncrona, Fechamento por Encantamento.</span>
+        </div>
+        <div class="filter-step">
+          <div class="step-num">2</div>
+          <span><strong>Bônus exclusivo</strong> (apenas para quem assiste) — templates, scripts e criativos validados prontos para usar.</span>
+        </div>
+        <div class="filter-step">
+          <div class="step-num">3</div>
+          <span><strong>Acesso ao grupo VIP</strong> — comunidade fechada onde corretores que implementam compartilham resultados e dúvidas.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCARCITY NOTE -->
+    <p class="scarcity">
+      Evento 100% online — sem sair de casa. Começa terça às 12h.<br>
+      O link da transmissão só será enviado dentro do grupo VIP.
+    </p>
+
+  </div>
+</body>
+</html>
