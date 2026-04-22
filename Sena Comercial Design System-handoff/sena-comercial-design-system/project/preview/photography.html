@@ -1,0 +1,14 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{background:#000;margin:0;}
+  .wrap{padding:20px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+  .ph{aspect-ratio:3/4;background-size:cover;background-position:center;position:relative;border-radius:4px;overflow:hidden;border:1px solid var(--border);}
+  .ph::after{content:attr(data-lbl);position:absolute;bottom:0;left:0;right:0;padding:8px 10px 8px;font-family:var(--font-mono);font-size:9px;letter-spacing:.08em;color:#F4F1EA;background:linear-gradient(180deg,transparent,rgba(0,0,0,.9));}
+</style></head>
+<body><div class="wrap">
+  <div class="ph" style="background-image:url(../assets/airton-portrait.png)" data-lbl="Executivo · alto contraste"></div>
+  <div class="ph" style="background-image:url(../assets/brand-racing-suit-gold.png)" data-lbl="F1 · dourado"></div>
+  <div class="ph" style="background-image:url(../assets/brand-executive-window.png)" data-lbl="Corporativo · luz quente"></div>
+  <div class="ph" style="background-image:url(../assets/brand-strategy-board.png)" data-lbl="B&amp;W · estratégia"></div>
+</div></body></html>

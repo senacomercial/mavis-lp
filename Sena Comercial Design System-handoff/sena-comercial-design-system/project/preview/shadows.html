@@ -1,0 +1,22 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{background:#000;margin:0;}
+  .wrap{padding:28px 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:end;}
+  .cell{display:flex;flex-direction:column;gap:14px;}
+  .sh-box{height:80px;background:#1A1A1A;border:1px solid var(--border);border-radius:6px;}
+  .s-sm{box-shadow:0 1px 2px rgba(0,0,0,.4);}
+  .s-md{box-shadow:0 8px 24px rgba(0,0,0,.45);}
+  .s-lg{box-shadow:0 20px 60px rgba(0,0,0,.55);}
+  .s-gold{box-shadow:0 0 0 1px rgba(197,160,89,.35), 0 10px 30px rgba(197,160,89,.15); border-color:rgba(197,160,89,.4);}
+  .s-ign{box-shadow:0 0 0 1px rgba(232,93,4,.45), 0 12px 36px rgba(232,93,4,.22); border-color:rgba(232,93,4,.55);}
+  .lbl{font-family:var(--font-mono);font-size:10px;color:var(--fg-subtle);text-align:center;letter-spacing:.06em;}
+</style></head>
+<body><div class="wrap">
+  <div class="cell"><div class="sh-box s-sm"></div><div class="lbl">shadow-sm · hairline</div></div>
+  <div class="cell"><div class="sh-box s-md"></div><div class="lbl">shadow-md · card padrão</div></div>
+  <div class="cell"><div class="sh-box s-lg"></div><div class="lbl">shadow-lg · modal / hero</div></div>
+  <div class="cell"><div class="sh-box s-gold"></div><div class="lbl">glow gold · CTA primário</div></div>
+  <div class="cell"><div class="sh-box s-ign"></div><div class="lbl">glow ignition · faísca</div></div>
+  <div class="cell"><div class="sh-box" style="background:transparent;border:1px dashed rgba(255,255,255,.15)"></div><div class="lbl">flat · layout base</div></div>
+</div></body></html>

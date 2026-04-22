@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{background:#000;margin:0;}
+  .wrap{padding:26px 30px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+  .btn{font-family:var(--font-sans);font-weight:800;font-size:14px;letter-spacing:.04em;padding:14px 24px;border-radius:3px;border:0;cursor:pointer;transition:filter .12s;display:inline-flex;align-items:center;gap:8px;}
+  .btn:hover{filter:brightness(1.12);}
+  .btn-primary{background:#C5A059;color:#000;}
+  .btn-ignition{background:#E85D04;color:#000;}
+  .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25);}
+  .btn-ghost:hover{border-color:#C5A059;color:#C5A059;filter:none;}
+  .btn-sm{padding:9px 16px;font-size:12px;}
+  .btn-lg{padding:18px 32px;font-size:15px;}
+  .chip{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:9999px;font-family:var(--font-sans);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+  .chip-gold{background:rgba(197,160,89,.15);color:#D9B977;border:1px solid rgba(197,160,89,.4);}
+  .chip-ign{background:rgba(232,93,4,.15);color:#FF7A24;border:1px solid rgba(232,93,4,.4);}
+  .chip-red{background:#CC0000;color:#fff;}
+  .dot{width:6px;height:6px;border-radius:50%;background:currentColor;}
+</style></head>
+<body><div class="wrap">
+  <button class="btn btn-primary btn-lg">📲 Entrar no Grupo VIP</button>
+  <button class="btn btn-ignition">Agendar Diagnóstico</button>
+  <button class="btn btn-ghost">Ver método</button>
+  <button class="btn btn-primary btn-sm">Acessar</button>
+  <span class="chip chip-gold"><span class="dot"></span> PÓDIO</span>
+  <span class="chip chip-ign"><span class="dot"></span> IGNIÇÃO</span>
+  <span class="chip chip-red">URGÊNCIA · 100 VAGAS</span>
+</div></body></html>
