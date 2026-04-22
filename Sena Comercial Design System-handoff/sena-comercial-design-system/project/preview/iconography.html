@@ -1,0 +1,42 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+  html,body{background:#000;margin:0;}
+  .wrap{padding:22px 28px;display:grid;grid-template-columns:1fr 1.2fr;gap:24px;}
+  h4{font-family:var(--font-sans);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#C5A059;margin:0 0 14px;font-weight:700;}
+  .emoji-row{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
+  .e{display:flex;flex-direction:column;gap:4px;align-items:center;font-family:var(--font-mono);font-size:10px;color:var(--fg-subtle);}
+  .e span.big{font-size:24px;}
+  .lucide-row{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:6px;}
+  .lucide-row .i{display:flex;flex-direction:column;gap:4px;align-items:center;font-family:var(--font-mono);font-size:9px;color:var(--fg-subtle);}
+  .i svg{stroke:#fff;stroke-width:2;}
+  .note{font-family:var(--font-sans);font-size:10px;color:var(--fg-subtle);margin-top:12px;letter-spacing:.04em;}
+</style></head>
+<body><div class="wrap">
+  <div>
+    <h4>Emoji funcional (oficial)</h4>
+    <div class="emoji-row">
+      <div class="e"><span class="big">✅</span>benefit</div>
+      <div class="e"><span class="big">📲</span>CTA</div>
+      <div class="e"><span class="big">📌</span>proof</div>
+      <div class="e"><span class="big">👇</span>flow</div>
+      <div class="e"><span class="big">⚡</span>ignição</div>
+    </div>
+    <div class="note">Uso apenas funcional. Nunca decorativo.</div>
+  </div>
+  <div>
+    <h4>Lucide — ícones UI (substituição sugerida)</h4>
+    <div class="lucide-row">
+      <div class="i"><i data-lucide="arrow-right"></i>arrow-right</div>
+      <div class="i"><i data-lucide="check"></i>check</div>
+      <div class="i"><i data-lucide="target"></i>target</div>
+      <div class="i"><i data-lucide="gauge"></i>gauge</div>
+      <div class="i"><i data-lucide="flame"></i>flame</div>
+      <div class="i"><i data-lucide="trending-up"></i>trending-up</div>
+    </div>
+    <div class="note">Stroke 2px · monocromático · combina com "telemetria fria"</div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>
